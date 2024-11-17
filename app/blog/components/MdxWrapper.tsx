@@ -2,7 +2,6 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 
 import CustomImage from "@/app/blog/components/Image";
 import Link from "@/app/components/Link";
-import Map from "@/app/components/bento/Map";
 import Alert from "./mdx/Alert";
 import Weather from "./mdx/Weather";
 import WeatherList from "./mdx/WeatherList";
@@ -44,8 +43,7 @@ const components = {
   Weather: Weather,
   WeatherList: WeatherList,
   LinkPreview: LinkPreview,
-  Map: Map,
-  SeriesCollapsible: SeriesCollapsible,
+    SeriesCollapsible: SeriesCollapsible,
 };
 
 export default function MdxWrapper({ code }: { code: string }) {
