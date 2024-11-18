@@ -1,0 +1,201 @@
+---
+title: "Retain"
+date: "2024-10"
+summary: "AI-powered learning platform that transforms academic content into personalized audio lectures using RAG and advanced language models."
+longSummary: "Built a scalable educational platform that combines RAG (Retrieval-Augmented Generation), vector embeddings, and microservices architecture to process academic materials and generate personalized audio lectures. The system handles document processing, AI analysis, and text-to-speech conversion while maintaining secure user data management."
+tags: ["React", "Node.js", "Python", "OpenAI GPT-4", "PostgreSQL", "AWS", "Docker", "Pinecone", "Flask"]
+url: "https://github.com/AnwarMP/Retain"
+---
+
+## Project Overview
+
+Retain is an AI-powered educational platform that transforms complex academic materials into personalized audio lectures. The system uses advanced language models and RAG to process documents, extract key concepts, and generate clear, accessible explanations tailored to each student's needs.
+
+### Key Features
+
+- **Document Processing**: Secure upload and intelligent analysis of academic materials
+- **AI-Powered Analysis**: RAG implementation with GPT-4 for context-aware content generation
+- **Audio Generation**: Text-to-speech conversion of processed content
+- **User Management**: Secure authentication and personalized content storage
+
+## Technical Implementation
+
+### Microservices Architecture
+
+I designed a scalable microservices architecture to handle complex data flows:
+
+```javascript
+// Document Processing Service
+class DocumentProcessor {
+    async processDocument(file) {
+        const s3Client = new S3Client({
+            credentials: {
+                accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+                secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+            },
+            region: process.env.AWS_REGION
+        });
+
+        // Upload to S3 with metadata
+        const upload = await s3Client.send(new PutObjectCommand({
+            Bucket: 'retain-documents',
+            Key: `lectures/${Date.now()}_${file.originalname}`,
+            Body: file.buffer,
+            ContentType: file.mimetype,
+            Metadata: {
+                userId: req.user.id,
+                documentType: file.documentType
+            }
+        }));
+
+        return upload.Location;
+    }
+}
+```
+
+### RAG Implementation
+
+I built a RAG system using OpenAI and Pinecone:
+
+```python
+def perform_rag(pdf_url, question):
+    # Configure vector store
+    index = pc.Index(
+        name='semantic-search-fast',
+        dimension=1536,
+        metric='cosine'
+    )
+    
+    # Process document and generate embeddings
+    loader = PyPDFLoader(pdf_url)
+    documents = loader.load()
+    text_splitter = CharacterTextSplitter(
+        chunk_size=2000, 
+        chunk_overlap=0
+    )
+    docs = text_splitter.split_documents(documents)
+    
+    # Generate and store embeddings
+    embeddings = OpenAIEmbeddings()
+    for i, doc in enumerate(docs):
+        vector = embeddings.embed_query(doc.page_content)
+        index.upsert(
+            vectors=[(str(i), vector, {"text": doc.page_content})]
+        )
+```
+
+### User Authentication
+
+I implemented secure user management with JWT:
+
+```javascript
+const userAuth = {
+    async authenticateUser(email, password) {
+        const user = await pool.query(
+            'SELECT * FROM users WHERE email = $1',
+            [email]
+        );
+
+        if (user && await bcrypt.compare(password, user.password)) {
+            const token = jwt.sign(
+                { userId: user.id },
+                process.env.JWT_SECRET,
+                { expiresIn: '24h' }
+            );
+            return { token, user };
+        }
+    }
+};
+```
+
+## Technical Architecture
+
+The application follows a microservices-based architecture:
+
+1. **Frontend Layer**
+   - React-based UI components
+   - State management with Context API
+   - Real-time audio playback interface
+   - Document upload handling
+
+2. **Backend Services**
+   - Node.js/Express API server
+   - Flask RAG service
+   - PostgreSQL database management
+   - AWS S3 integration
+
+3. **AI Processing Pipeline**
+   - Document preprocessing
+   - OpenAI GPT-4 integration
+   - Vector embeddings with Pinecone
+   - Text-to-speech conversion
+
+## Infrastructure
+
+I designed a robust cloud infrastructure:
+
+```yaml
+version: '3.8'
+services:
+  api:
+    build: ./backend
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      
+  rag:
+    build: ./rag_service
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - PINECONE_API_KEY=${PINECONE_API_KEY}
+    ports:
+      - "5000:5000"
+
+  db:
+    image: postgres:14
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+```
+
+## Security Implementation
+
+I implemented comprehensive security measures:
+
+- JWT-based authentication flow
+- Secure document handling in AWS S3
+- Environment-based configuration
+- Input validation and sanitization
+- Rate limiting and request throttling
+
+
+## Technical Challenges
+
+- Implementing efficient vector similarity search
+- Managing concurrent document processing
+- Optimizing audio generation pipeline
+- Ensuring data consistency across microservices
+
+## Lessons Learned
+
+- Importance of proper service isolation
+- Benefits of vector databases for semantic search
+- Challenges of maintaining microservices architecture
+- Value of comprehensive error handling
+
+## Future Development
+
+- Enhanced document preprocessing
+- Improved audio synthesis quality
+- Advanced content personalization
+- Expanded file format support
+- Real-time collaboration features

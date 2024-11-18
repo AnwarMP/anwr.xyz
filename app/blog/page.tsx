@@ -1,49 +1,36 @@
 import { Metadata } from "next";
 import { allBlogs } from ".contentlayer/generated";
-import PostList from "@/app/blog/components/PostList";
+import PostCard from "@/app/blog/components/PostCard";
 
 export const metadata: Metadata = {
-  title: "Blog | Brian Ruiz",
-  description:
-    "I write about programming, design, and occasionally life updates!",
-  openGraph: {
-    title: "Blog | Brian Ruiz",
-    description:
-      "I write about programming, design, and occasionally life updates!",
-    type: "website",
-    url: "https://b-r.io/blog/Blog",
-    images: [{ url: "https://b-r.io/api/og?title=Blog", alt: "Blog" }],
-  },
+  title: "Blog | Anwar Mujeeb",
+  description: "Technical writings about machine learning, software engineering, and technology",
 };
 
-export default function BlogPage() {
-  const blogs = allBlogs.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+export default function Blog() {
+  // Sort posts by date
+  const posts = allBlogs.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
   return (
     <div className="flex flex-col gap-16 md:gap-24">
-      <div className="flex flex-col gap-8">
-        <div>
-          <h1 className="animate-in text-3xl font-bold tracking-tight">Blog</h1>
-          <p
-            className="animate-in text-secondary"
-            style={{ "--index": 1 } as React.CSSProperties}
-          >
-            {blogs.length} posts so far. Stay tuned for more!
-          </p>
-        </div>
+      <div>
+        <h1 className="animate-in text-3xl font-bold tracking-tight">Blog</h1>
+        <p
+          className="animate-in text-secondary"
+          style={{ "--index": 1 } as React.CSSProperties}
+        >
+          Technical articles about software engineering, machine learning, and development practices.
+        </p>
       </div>
-      <div
-        className="animate-in"
-        style={{ "--index": 2 } as React.CSSProperties}
-      >
-        <PostList posts={blogs} />
-      </div>
-      <div
-        className="animate-in"
-        style={{ "--index": 3 } as React.CSSProperties}
-      >
+
+      <div className="animate-in flex flex-col gap-8">
+        {posts.length === 0 ? (
+          <p className="text-secondary">No posts yet. Check back soon!</p>
+        ) : (
+          posts.map((post) => <PostCard key={post.slug} post={post} />)
+        )}
       </div>
     </div>
   );

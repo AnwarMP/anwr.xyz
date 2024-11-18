@@ -1,0 +1,6 @@
+const robotsTxt = `
+User-agent: *
+Allow: /
+
+Sitemap: https://anwr.xyz/sitemap.xml
+`;

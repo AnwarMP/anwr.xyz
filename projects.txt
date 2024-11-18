@@ -1,0 +1,152 @@
+%-----------PROJECTS-----------
+\section{\textbf{Projects}}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{ConveneAI} $|$ \emph{Python, LlamaIndex, Claude, Gemini, React, Flask}}{November 2024}
+\resumeItemListStart
+\resumeItem{Built real-time meeting intelligence system by implementing multi-agent architecture using LlamaIndex for function calling and Claude/Gemini for analysis}
+\resumeItem{Increased information retrieval accuracy by 60\% by engineering context-aware prompting system that autonomously searches emails and generates actionable summaries}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Retain} $|$ \emph{Python, LlamaIndex, RAG, Flask, AWS, PostgreSQL}}{October 2024}
+\resumeItemListStart
+\resumeItem{Engineered an AI-powered learning platform that processes academic content using RAG (Retrieval-Augmented Generation) and function-calling agents to generate personalized audio lectures, increasing content comprehension by 70\%}
+\resumeItem{Developed multi-agent architecture with LlamaIndex that combines task-specific agents for document analysis, content routing, and quality verification, reducing hallucination rate by 40\%}
+\resumeItemListEnd
+% {\textbf{ConveneAI} $|$ \emph{Python, React, LlamaIndex, Anthropic Claude, Google Gemini, Flask}}{}
+% \resumeItemListStart
+% \resumeItem{Developed an AI-powered meeting assistant using a multi-agent architecture: a Claude-based agent for real-time meeting analysis and a Gemini agent for video understanding and contextual chat}
+% \resumeItem{Implemented function-calling agents using LlamaIndex that can autonomously search emails, process transcripts, and generate structured meeting summaries with actionable insights}
+% \resumeItem{Engineered a context-aware prompt system that maintains conversation history and enables dynamic tool selection based on meeting content, improving information retrieval accuracy}
+% \resumeItemListEnd
+% {\textbf{Retain} $|$ \emph{React, Node.js, Python, OpenAI GPT-4, PostgreSQL, AWS, Docker}}{}
+% \resumeItemListStart
+%     \resumeItem{Architected and developed an AI-powered platform that transforms academic materials into personalized audio lectures, implementing RAG (Retrieval-Augmented Generation) with OpenAI's GPT-4}
+%     \resumeItem{Built scalable microservices architecture using Node.js and Flask, managing complex data flow between document processing, AI analysis, and audio generation}
+%     \resumeItem{Implemented secure document handling with AWS S3, vector embeddings with Pinecone, and user authentication using JWT, handling sensitive user data at scale}
+% \resumeItemListEnd
+
+% \resumeProjectHeading
+% {\textbf{BillBuddy} $|$ \emph{Next.js, React.js, Tailwind CSS, Node.js, PostgreSQL, Pinecone, OpenAI, Amazon S3, Clerk}}{}
+% \resumeItemListStart
+%     \resumeItem{Developed an AI-powered web application to simplify health insurance policies, enabling users to upload documents and receive instant, clear answers}
+%     \resumeItem{Integrated Retrieval-Augmented Generation (RAG) for document analysis and query response}
+%     % \resumeItem{Configured backend with Node.js and PostgreSQL, utilizing Pinecone for efficient document search and retrieval.}
+%     % \resumeItem{Implemented user authentication with Clerk and file storage with Amazon S3}
+%     % \resumeItem{Developed frontend using Next.js, React.js, and Tailwind CSS, providing a seamless user interface.}
+% \resumeItemListEnd
+
+
+% \resumeProjectHeading
+% {\textbf{MelodyMap} $|$ \emph{Android, Kotlin, Spotify API, Gemini API, Video Processing, Machine Learning}}{}
+% \resumeItemListStart
+%     \resumeItem{Developed an Android app to generate music playlists by integrating Spotify and Gemini APIs for video processing and scene analysis}
+%     \resumeItem{Implemented video frame extraction and analysis, creating context-aware prompts for Gemini API to suggest relevant music tracks}
+%     % \resumeItem{Designed a user-friendly interface with smooth navigation, leveraging asynchronous processing for seamless playlist interaction.}
+% \resumeItemListEnd
+
+RETAIN DESCRIPTION ENHANCED:
+
+AI-Powered Lecturer
+Inspiration
+In today's fast-paced academic world, students and young professionals often find themselves overwhelmed by complex concepts and dense academic materials. Whether it's sifting through lecture notes, deciphering lengthy reports, or struggling to understand a difficult research paper, the challenge of grasping key ideas can feel daunting. This confusion can slow down the learning process, leaving students frustrated and unsure of where to focus their efforts. This struggle highlights the necessity for tools that can bridge the gap between overwhelming content and true understanding, offering a more efficient and accessible way to digest critical information.
+
+What RetAIn does
+RetAIn harnesses the power of AI to transform academic materials into personalized, easy-to-understand audio lectures. Whether you’re dealing with notes, research papers, or reports, RetAIn takes your content and breaks it down into tailored explanations, guiding you through the most important concepts. By identifying key themes and simplifying complex information, RetAIn turns your study materials into a structured learning experience, helping you focus on what really matters.
+
+How we built it
+We designed the project specifically for school students, aiming to help them streamline their learning process.
+
+Frontend We used React to create a clean and user-friendly interface.
+Backend Our backend stack consisted of Node.js and an Express server connected to a PostgreSQL database and Amazon S3, which managed user data and stored documents.
+AI Integration Our flask service implements a Retrieval-Augmented Generation (RAG) model using a Flask API. It processes PDF documents, generates embeddings using OpenAI's model, and stores them in a Pinecone vector database for efficient retrieval. When a question is asked, the system queries Pinecone to find relevant text chunks, then uses OpenAI's GPT-4 model within an AutoGen multi-agent framework to generate a comprehensive response. This RAG system enables intelligent processing of lecture materials, generating summaries, answering questions, and creating study guides based on uploaded documents. For text-to-speech generation, we leveraged the Cartesia TTS API to provide a clear and natural-sounding speaking experience.
+Challenges we ran into
+One of the biggest challenges we faced was downsizing the project scope. Initially, we wanted to implement highly advanced features, such as generating article-like outputs with animated visualizations. However, this idea proved too complex for our timeline and resources, as it would have required incorporating rendering engines and advanced animation technologies. After realizing the technical and time constraints, we shifted our focus to building a more streamlined application that handled note summarization and study guide generation effectively. It also became a difficulty incorporating sponsor material effectively, so we ended up falling back on our technical backgrounds more with the experience we had before coming here. Another challenge was finding a balance between simplicity and functionality. We had to make sure the AI-generated content was useful without overwhelming the user with too much information, which required fine-tuning the RAG AI model for better relevance and accuracy.
+
+What we learned
+Throughout this project, we gained valuable insights into both front-end and back-end development as well as the use of AI in practical applications. We learned how to effectively build an intuitive user interface, manage databases for large sets of documents, and integrate AI for real-time note summarization and study guide generation. We also gained experience in scaling back ambitious features in favor of a more focused and usable product, learning to prioritize simplicity and functionality.
+
+Conclusion
+Despite the hurdles, we successfully built a functional and user-friendly AI-powered note-taking app. The project not only provided a valuable learning experience in full-stack development and AI integration but also helped us understand the importance of prioritizing and adapting our goals to match our capabilities and timeline.
+
+
+
+Inspiration
+At BillBuddy, our inspiration stems from the frustration and confusion many people experience when trying to understand their health insurance policies. Even the most diligent individuals often struggle with dense, jargon-filled documents and a lack of clear, accessible information. We recognized a critical need for a solution that could transform these complicated texts into understandable insights.
+
+According to the Center of Health Care Strategies, nearly 9 out of 10 adults in the United States struggle with health literacy. Understanding this, we aim to bridge the knowledge gap with advanced AI technology, empowering individuals to make confident health care decisions. Our goal is to eliminate anxiety and uncertainty, providing clarity and peace of mind.
+
+Stories of people feeling overwhelmed by their policies inspired us to create BillBuddy, a reliable 24/7 companion that simplifies health insurance for everyone. We are committed to ensuring no one navigates their health insurance complexities alone. You deserve to make informed, confident decisions about your health care, and BillBuddy is here to demystify the process.
+
+What it does
+BillBuddy simplifies health insurance by using RAG and Prompt Tuning to analyze your policy documents. You can upload your insurance policy, and BillBuddy will provide clear, concise summaries and answers to any questions you have about your coverage, deductibles, premiums, and more. It makes understanding your health insurance easy and accessible, empowering you to make informed decisions about your health care.
+
+How we built it
+Set Up Storage: a. Configured Amazon S3 buckets for storing user-uploaded files. b. Set up access permissions
+
+Configured Databases: a. Set up Pinecone for the vector database, configured embedding settings. b. Set up PostgreSQL for user data, and configured schemas and tables (using drizzle for interaction)
+
+Implemented Authentication: a. Integrate Clerk for user authentication. b. Ensure secure handling of user credentials and sessions.
+
+Develop the Frontend: a. Created the application structure using Next.js. b. Developed interactive components using React.js. c. Styled the application using Tailwind CSS for a responsive and modern design. d. Built RAG Pipelines:
+
+Used Langchain to create pipelines for processing user queries. a. Integrated Pinecone for efficient document search and retrieval. b. Handled Inference and Embeddings:
+
+Implement OpenAI for generating document embeddings. a. Used OpenAI's models for processing and generating responses to user queries. b. Interfaced with PostgreSQL:
+
+Challenges we ran into
+Issues with outdated node packages and pinecone interfaces
+Setting up the RAG pipeline in pinecone and s3, ran into CORS errors with S3
+Accomplishments that we're proud of
+Setting up entire end to end RAG pipeline
+Adding additional prompt styling functionality that is user controlled such as implementing a click and drop through
+What we learned
+We've gained a deep understanding of the widespread confusion and frustration surrounding health insurance. Learning that nearly 90% of adults in the United States struggle with health literacy has underscored the critical need for a tool like BillBuddy. This insight has driven us to focus on user-friendly design and intuitive interfaces, making it easy for users of all backgrounds to navigate their insurance information. Additionally, we've learned end to end data pipelines for RAG and prompt finetuning with GPT.
+
+What's next for BillBuddy
+Implementing function calling with search apis such as You.com
+Updating to use better parsers of PDFs
+Integrating and saving user data such as plan information and fine tuning with medical LLMs to give recommendations on what to book.
+
+
+RESOURCELY:
+Inspiration
+Over the past year, California has faced a series of severe winter storms and atmospheric disturbances, leading to widespread flooding, power outages, and critical shortages of essential resources. The limitations of government assistance, largely confined by geographical reach, have often left communities to rely on the mutual support of neighbors and friends to meet their basic needs for food, water, and safety.
+
+What it does
+Resourcely is a peer-to-peer platform designed to facilitate the sharing of resources and essential items during emergencies. Our app allows users to request specific resources like medical aid, food, and water and connects them with nearby community members who can provide these necessities. Key features include a real-time news landing page, a local news and requests feed, user profiles, and a map showcasing nearby resources.
+
+How we built it
+Throughout development, we encountered several challenges, particularly with the user interface design and backend integration, as our team lacked prior experience with React. To address complex routing issues for a multi-layer, multi-user web application, we incorporated mock data to expedite the MVP development, helping users quickly grasp the value of our product.
+
+Challenges we ran into
+Throughout development, we encountered several challenges, particularly with the user interface design and backend integration, as our team lacked prior experience with React. To address complex routing issues for a multi-layer, multi-user web application, we incorporated mock data to expedite the MVP development, helping users quickly grasp the value of our product.
+
+Accomplishments that we're proud of
+We are immensely proud of completing the entire user interface despite our initial lack of React expertise. Developing a solution to a problem we've personally experienced has been incredibly fulfilling. Our MVP includes features like resource mapping, alerts, user profiles, and a dynamic news feed with interactive visuals, all designed to maximize user assistance and information accessibility.
+
+What we learned
+This project significantly enhanced our skills in front-end and full-stack development, particularly in crafting user-friendly interfaces and tackling complex software challenges. We adopted a problem-solving approach that involved breaking down complex issues into manageable tasks and collaborating effectively to address them.
+
+What's next for Resourcely
+We are developing a hardware component that enables peer-to-peer communications via a Raspberry Pi and smartphone connection, creating a mesh network that operates independently of Wi-Fi. This will be crucial for disaster-stricken areas lacking conventional communication infrastructure. Additionally, we are focusing on scaling our backend to accommodate real users and integrate actual data streams for news and resource updates.
+
+Built With
+css3
+dns
+express.js
+html5
+javascript
+mapkit
+node.js
+react
+vercel
+
+
+CONVENE AI: 
+An AI meeting assistant that provides real-time screen content understanding and contextual memory, focusing specifically on technical meetings where participants frequently share code, diagrams, and technical documentation.
+
+
+Convene AI is an advanced meeting assistant that transforms the way teams handle meetings by offering real-time insights, document retrieval, and engagement tracking, all in one platform. More than just a transcription tool, Convene AI captures and analyzes conversations as they happen, highlighting key points, decisions, and action items to keep discussions organized and actionable. It integrates seamlessly with your documents and emails, allowing relevant information to surface instantly during meetings, eliminating the need to dig through files or inboxes. Additionally, Convene AI helps with scheduling by enabling users to create follow-up meetings or add calendar events directly from the session, streamlining the entire process. A standout feature is its ability to analyze participant engagement through gesture and facial recognition, providing insights into team sentiment and ensuring alignment. Post-meeting, users can interact with the meeting video, allowing them to revisit specific points by simply asking questions, making it a powerful tool for reviewing and clarifying details on demand. Convene AI essentially acts as a smart assistant that remembers everything discussed, enhances meeting notes with context, and provides comprehensive, actionable summaries, significantly boosting team productivity and collaboration.
+
+Anwar contributed to the ConveneAI smart assistant app by implementing backend Gemini routes for transcript analysis and note enhancement. He refined meeting note functionality and ensured accurate transcript processing, allowing expanded context for better comprehension. Additionally, he integrated these features with video calls, enabling smooth transitions from live meetings to summarized insights.

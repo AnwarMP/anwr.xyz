@@ -36,19 +36,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } = blog;
 
   const ogImage = image
-    ? `https://b-r.io/${image}`
-    : `https://b-r.io/api/og?title=${title}`;
+    ? `https://anwr.xyz/${image}`
+    : `https://anwr.xyz/api/og?title=${title}`;
 
   const metadata: Metadata = {
-    metadataBase: new URL("https://b-r.io"),
-    title: `${title} | Brian Ruiz`,
+    metadataBase: new URL("https://anwr.xyz"),
+    title: `${title} | Anwar Mujeeb`,
     description,
     openGraph: {
-      title: `${title} | Brian Ruiz`,
+      title: `${title} | Anwar Mujeeb`,
       description,
       type: "article",
       publishedTime,
-      url: `https://b-r.io/blog/${slug}`,
+      url: `https://anwr.xyz/blog/${slug}`,
       images: [{ url: ogImage, alt: title }],
     },
   };
