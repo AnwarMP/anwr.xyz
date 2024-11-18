@@ -38,7 +38,7 @@ export default function Projects() {
               <p className="mt-2 text-secondary">{project.summary}</p>
               
               <div className="mt-4 flex flex-wrap gap-2">
-                {project.tags?.map((tag) => (
+                {project.tags?.map((tag: string) => (
                   <span
                     key={tag}
                     className="rounded-full bg-primary px-3 py-1 text-xs text-secondary"

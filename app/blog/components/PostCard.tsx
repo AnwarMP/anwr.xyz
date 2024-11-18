@@ -19,7 +19,7 @@ export default function PostCard({ post }: { post: Blog }) {
       
       {post.tags && (
         <div className="flex flex-wrap gap-2">
-          {post.tags.map((tag) => (
+          {post.tags.map((tag: string) => (
             <span
               key={tag}
               className="text-xs rounded-full bg-primary px-3 py-1 text-secondary"

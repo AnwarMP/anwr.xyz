@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <p className="text-secondary">{project.summary}</p>
         {project.tags && (
           <div className="mt-2 flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
+            {project.tags.map((tag: string) => (
               <span
                 key={tag}
                 className="rounded-full bg-primary px-3 py-1 text-xs text-secondary"

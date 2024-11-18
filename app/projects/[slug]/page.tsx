@@ -36,7 +36,7 @@ export default function Project({ params }: Props) {
         
         <div className="flex items-center gap-4">
           <div className="flex flex-wrap gap-2">
-            {project.tags?.map((tag) => (
+            {project.tags?.map((tag: string) => (
               <span
                 key={tag}
                 className="rounded-full bg-secondary px-4 py-1.5 text-sm"
