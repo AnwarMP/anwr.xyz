@@ -72,9 +72,8 @@ export default async function Blog({ params }: { params: any }) {
             <p className="text-secondary">{blog.summary}</p>
           </div>
           <div className="flex max-w-none items-center gap-4">
-            <Avatar src={Me} initials="br" size="sm" />
             <div className="leading-tight">
-              <p>Brian Ruiz</p>
+              <p>Anwar Mujeeb</p>
               <p className="text-secondary">
                 <time dateTime={blog.date}>{formatDate(blog.date)}</time>
                 {blog.updatedAt
