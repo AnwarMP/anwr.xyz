@@ -7,8 +7,6 @@ import { allBlogs } from ".contentlayer/generated";
 import Avatar from "@/app/components/Avatar";
 import Tags from "@/app/components/Tags";
 import Mdx from "@/app/blog/components/MdxWrapper";
-import FlipNumber from "@/app/components/FlipNumber";
-import Me from "@/public/avatar.png";
 
 import { formatDate } from "@/app/_utils/formatDate";
 
