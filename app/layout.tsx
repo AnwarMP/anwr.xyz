@@ -4,6 +4,7 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { ThemeProvider } from "@/app/components/ThemeProvider";
 import Navigation from "@/app/components/Navigation";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://anwr.xyz"),
