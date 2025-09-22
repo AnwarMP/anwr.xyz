@@ -23,7 +23,7 @@ function IntroSection() {
           Anwar Mujeeb
         </h1>
         <p className="animate-in text-lg text-secondary">
-          Software Engineer at Bloomberg specializing in machine learning and full-stack development.
+          SWE @ Bloomberg NYC | Previously @ Google & ST Microelectronics
         </p>
       </div>
       <div className="flex animate-in gap-3 text-sm">
@@ -114,9 +114,8 @@ function ExperienceSection() {
       date: "June 2025 - Present",
       location: "New York City, NY",
       highlights: [
-        "Working on Fixed Income Derivatives within the Bloomberg Terminal",
-        "Building data foundations including ingestion systems, data pipelines, and serving infrastructure",
-        "Developing and maintaining database solutions for financial data"
+        "Fixed Income Derivatives on the Bloomberg Terminal",
+        "Building scalable data foundations including ingestion systems, data pipelines, and serving infrastructure",
       ]
     },
     {
