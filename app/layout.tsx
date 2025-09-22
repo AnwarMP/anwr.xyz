@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: "Anwar Mujeeb | Software Engineer",
     template: "%s | Anwar Mujeeb"
   },
-  description: "Software Engineer specializing in machine learning and full-stack development. Previously at Google and ST Microelectronics.",
+  description: "Software Engineer at Bloomberg, Previously at Google and ST Microelectronics.",
   icons: {
     icon: [
       { url: "/logo/favicon.ico" },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   manifest: "/logo/site.webmanifest",
   openGraph: {
     title: "Anwar Mujeeb | Software Engineer",
-    description: "Software Engineer specializing in machine learning and full-stack development. Previously at Google and ST Microelectronics.",
+    description: "Software Engineer at Bloomberg, Previously at Google and ST Microelectronics.",
     url: "https://anwr.xyz",
     siteName: "Anwar Mujeeb",
     locale: "en_US",

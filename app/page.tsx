@@ -23,8 +23,7 @@ function IntroSection() {
           Anwar Mujeeb
         </h1>
         <p className="animate-in text-lg text-secondary">
-          Software Engineer specializing in machine learning and full-stack development.
-          Expected to graduate from San Jose State University in December 2024.
+          SWE @ Bloomberg NYC | Previously @ Google & ST Microelectronics
         </p>
       </div>
       <div className="flex animate-in gap-3 text-sm">
@@ -110,9 +109,19 @@ function FeaturedProjects() {
 function ExperienceSection() {
   const experiences = [
     {
+      company: "Bloomberg",
+      role: "Software Engineer",
+      date: "June 2025 - Present",
+      location: "New York City, NY",
+      highlights: [
+        "Fixed Income Derivatives on the Bloomberg Terminal",
+        "Building scalable data foundations including ingestion systems, data pipelines, and serving infrastructure",
+      ]
+    },
+    {
       company: "ST Microelectronics",
       role: "Software Engineering and Machine Learning Intern",
-      date: "April 2024 - November 2024",
+      date: "April 2024 - May 2025",
       location: "Santa Clara, CA",
       highlights: [
         "Accelerated inference speed by 200% by optimizing Tensorflow model architectures for on-device blood pressure monitoring using Android NDK",
